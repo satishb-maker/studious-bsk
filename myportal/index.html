@@ -1,0 +1,316 @@
+Here's a simple single-page web portal using only HTML and CSS. It includes:
+
+* Responsive header with navigation
+* Hero section
+* Feature cards
+* About section
+* Contact section
+* Footer
+* Modern styling
+
+Save it as `index.html` and open it in a browser.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Portal</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    color:#333;
+}
+
+/* Header */
+header{
+    background:#0d6efd;
+    color:white;
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:26px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:#ffd54f;
+}
+
+/* Hero */
+.hero{
+    height:450px;
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1600");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:white;
+}
+
+.hero h1{
+    font-size:50px;
+}
+
+.hero p{
+    margin:20px 0;
+    font-size:18px;
+}
+
+.hero button{
+    padding:12px 30px;
+    border:none;
+    background:#ffc107;
+    color:#000;
+    border-radius:5px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.hero button:hover{
+    background:#ff9800;
+}
+
+/* Sections */
+section{
+    padding:60px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    font-size:34px;
+}
+
+/* Cards */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#0d6efd;
+}
+
+/* About */
+.about{
+    text-align:center;
+    line-height:1.8;
+}
+
+/* Contact */
+.contact{
+    max-width:700px;
+    margin:auto;
+}
+
+.contact form{
+    display:flex;
+    flex-direction:column;
+}
+
+.contact input,
+.contact textarea{
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.contact button{
+    padding:12px;
+    border:none;
+    background:#0d6efd;
+    color:white;
+    cursor:pointer;
+    border-radius:5px;
+}
+
+.contact button:hover{
+    background:#084fc7;
+}
+
+/* Footer */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+}
+
+nav ul{
+    margin-top:15px;
+}
+
+.hero h1{
+    font-size:34px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<header>
+
+<div class="logo">
+MyPortal
+</div>
+
+<nav>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+</header>
+
+<section class="hero">
+<div>
+<h1>Welcome to My Web Portal</h1>
+<p>Your one-stop solution for all online services.</p>
+<button>Get Started</button>
+</div>
+</section>
+
+<section id="services">
+
+<h2 class="section-title">Our Services</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Dashboard</h3>
+<p>Manage your data and monitor activity through an intuitive dashboard.</p>
+</div>
+
+<div class="card">
+<h3>User Management</h3>
+<p>Create users, assign roles, and securely manage permissions.</p>
+</div>
+
+<div class="card">
+<h3>Reports</h3>
+<p>Generate detailed reports and download them in multiple formats.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Us</h2>
+
+<div class="about">
+<p>
+This web portal is designed to provide a modern and responsive user experience.
+It is lightweight, easy to customize, and suitable for organizations,
+schools, startups, or personal projects.
+</p>
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">Contact Us</h2>
+
+<div class="contact">
+
+<form>
+
+<input type="text" placeholder="Your Name" required>
+
+<input type="email" placeholder="Your Email" required>
+
+<textarea rows="5" placeholder="Your Message"></textarea>
+
+<button type="submit">Send Message</button>
+
+</form>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 MyPortal. All Rights Reserved.
+</p>
+
+</footer>
+
+</body>
+</html>
+```
+
+This is a clean starter template. If you want a more professional portal, you could enhance it with:
+
+* A collapsible sidebar navigation
+* Login and registration pages
+* Dashboard with charts and statistics
+* Dark/light mode toggle
+* Responsive hamburger menu
+* Bootstrap 5 or Tailwind CSS
+* Animated cards and scrolling effects
+* Backend integration (PHP, Node.js, Django, or ASP.NET) and database support
